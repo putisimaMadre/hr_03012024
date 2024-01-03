@@ -22,10 +22,6 @@ public class JobsEntity {
     @Basic
     @Column(name = "max_salary")
     private Integer maxSalary;
-    @OneToMany(mappedBy = "job")
-    //@JsonManagedReference
-    @JsonIgnore
-    private List<EmployeesEntity> employeesByJobId;
 
     public String getJobId() {
         return jobId;
@@ -59,24 +55,4 @@ public class JobsEntity {
         this.maxSalary = maxSalary;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        JobsEntity that = (JobsEntity) o;
-        return Objects.equals(jobId, that.jobId) && Objects.equals(jobTitle, that.jobTitle) && Objects.equals(minSalary, that.minSalary) && Objects.equals(maxSalary, that.maxSalary);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(jobId, jobTitle, minSalary, maxSalary);
-    }
-
-    public List<EmployeesEntity> getEmployeesByJobId() {
-        return employeesByJobId;
-    }
-
-    public void setEmployeesByJobId(List<EmployeesEntity> employeesByJobId) {
-        this.employeesByJobId = employeesByJobId;
-    }
 }
