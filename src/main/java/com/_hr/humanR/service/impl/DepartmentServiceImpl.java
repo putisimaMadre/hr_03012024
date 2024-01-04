@@ -15,4 +15,19 @@ public class DepartmentServiceImpl implements DepartmentService {
     public List<DepartmentsEntity> getDepartments() {
         return departmentRepository.findAll();
     }
+
+    @Override
+    public DepartmentsEntity getDepartment(Long id) {
+        return departmentRepository.findById(id).orElse(null);
+    }
+
+    @Override
+    public DepartmentsEntity saveDepartment(DepartmentsEntity department) {
+        return departmentRepository.save(department);
+    }
+
+    @Override
+    public void deleteDepartment(Long id) {
+        departmentRepository.deleteById(id);
+    }
 }

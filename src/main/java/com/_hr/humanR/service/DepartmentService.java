@@ -6,4 +6,7 @@ import java.util.List;
 
 public interface DepartmentService {
     List<DepartmentsEntity> getDepartments();
+    DepartmentsEntity getDepartment(Long id);
+    DepartmentsEntity saveDepartment(DepartmentsEntity department);
+    void deleteDepartment(Long id);
 }
