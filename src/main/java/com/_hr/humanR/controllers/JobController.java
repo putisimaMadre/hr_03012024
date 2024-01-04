@@ -32,7 +32,7 @@ public class JobController {
     @PutMapping("/jobs/{id}")
     public JobsEntity updateJob(@RequestBody JobsEntity job, @PathVariable String id){
         JobsEntity JobsEntityActual =  jobService.getJob(id);
-        JobsEntityActual.setJobId(job.getJobId());
+        //JobsEntityActual.setJobId(job.getJobId());
         JobsEntityActual.setJobTitle(job.getJobTitle());
         JobsEntityActual.setMinSalary(job.getMinSalary());
         JobsEntityActual.setMaxSalary(job.getMaxSalary());
